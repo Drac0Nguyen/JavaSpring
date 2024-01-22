@@ -1,0 +1,6 @@
+Repository\ProjectRepository.class
+Service\ProjectService.class
+Controller\ProjectController.class
+Entity\ProjectEntity.class
+AppConfig\AppConfig.class
+ProjectManager\Application.class

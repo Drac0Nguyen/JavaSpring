@@ -3,8 +3,7 @@
 	<groupId>ProjectManager</groupId>
 	<artifactId>ProjectManager</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<name>ProjectManager</name>
+
 	<properties>
 		<!-- Specify the Spring Boot version -->
 		<spring.boot.version>2.6.3</spring.boot.version>
@@ -19,8 +18,20 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.2.9.Final</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version> <!-- Use the appropriate version -->
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -35,7 +46,14 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
